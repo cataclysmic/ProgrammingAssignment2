@@ -27,10 +27,10 @@ cacheSolve <- function(x, ...) {
             message("Retrieving cached inverted matrix")
             return(i)
     }
-    origMat <- x$get()
-    i <- solve(origMat, ...)
-    x$setinverse(i)
-    i
+    origMat <- x$get()  # retrieve original matrix
+    i <- solve(origMat, ...)  # calculate inverse of origMat
+    x$setinverse(i)  # store origMat in makeCacheMatrix environment
+    i  # output inverse matrix
 }
 
 
